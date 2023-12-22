@@ -276,8 +276,11 @@ module.exports = (app, forumData) => {
     app.get('/logout', redirectLogin, (req, res) => {
         req.session.destroy(err => {
             if (err) {
-                return res.redirect('/');
+                // Handle the error if session destruction fails
+                console.error("Error during session destruction: ", err);
+                return res.status(500).send("Error during logout");
             }
+            // Redirect to the home page after successful logout
             res.redirect('/');
         });
     });
