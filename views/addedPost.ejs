@@ -1,0 +1,18 @@
+<!-- This page is displayed when a post is successfully added to the database. -->
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Post Added</title>
+    <!-- Linking my CSS -->
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+<body>
+    <h1>Post Added Successfully!</h1>
+    <!-- The post title and topic name are passed in as variables from the controller. -->
+    <p>Your post titled "<%= postTitle %>" has been added to the topic: <%= topicName %>.</p>
+    <!-- Link to the homepage -->
+    <div class="return-home">
+        <a href="/">Return Home</a>
+    </div>
+</body>
+</html>

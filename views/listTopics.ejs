@@ -1,0 +1,28 @@
+<!-- This lists all the topics in the forum. -->
+<!doctype html>
+<html lang="en">
+<head>
+    <title>List of Topics</title>
+    <!-- Linking my CSS -->
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+<body>
+    <h1>List of Topics on <span class="forum-name"><%= forumName %></span></h1>
+    <% if (topics.length === 0) { %>
+        <p>No topics available.</p>
+    <% } else { %>
+        <ul>
+            <!-- Loop through the topics and display them -->
+            <% topics.forEach(function(topic) { %>
+                <li>
+                    <strong><%= topic.name %></strong> - <%= topic.description %>
+                </li>
+            <% }); %>
+        </ul>
+    <% } %>
+    <!-- Link to the homepage -->
+    <div class="return-home">
+        <a href="/">Return Home</a>
+    </div>
+</body>
+</html>

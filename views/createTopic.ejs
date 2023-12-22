@@ -1,0 +1,25 @@
+<!-- This is the page where users can create a new topic.  -->
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Create a New Topic</title>
+    <!-- Linking my CSS -->
+    <link rel="stylesheet"  type="text/css" href="main.css" />
+</head>
+<body>
+    <h1>Create a New Topic for <span class="forum-name"><%= forumName %></span></h1>
+    <!-- The form for creating a new topic -->
+    <form method="POST" action="/topicCreated">
+        <label for="name">Topic Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description"></textarea><br>
+        <input type="submit" value="Create Topic">
+    </form>
+    <!-- Link to the homepage -->
+    <div class="return-home">
+        <a href="/">Return Home</a>
+    </div>
+</body>
+</html>
+

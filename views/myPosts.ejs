@@ -1,0 +1,25 @@
+<!-- This page displays all of the posts that the user has made. -->
+<!doctype html>
+<html lang="en">
+<head>
+    <title>My Posts</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+<body>
+    <h1>My Posts</h1>
+    <!-- This is the code that displays the posts that the user has made. -->
+    <% posts.forEach(function(post) { %>
+        <div>
+            <h3><%= post.title %></h3>
+            <p><%= post.content %></p>
+            <!-- This is the code that displays the delete button. -->
+            <form method="POST" action="/deletePost/<%= post.postID %>">
+                <input type="submit" value="Delete Post">
+            </form>
+        </div>
+    <% }); %>
+    <div class="return-home">
+        <a href="/">Return Home</a>
+    </div>
+</body>
+</html>

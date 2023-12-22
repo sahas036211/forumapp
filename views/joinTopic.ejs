@@ -1,0 +1,26 @@
+<!-- This page allows the user to join a topic. It displays a list of topics that the user can join. -->
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Join a Topic</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+<body>
+    <h1>Join a Topic</h1>
+    <!-- This form will send a POST request to the /joinTopic route -->
+    <form method="POST" action="/joinTopic">
+        <label for="topicID">Select Topic:</label>
+        <select id="topicID" name="topicID">
+            <!-- This will loop through the topics array and display each topic as an option in the dropdown menu -->
+            <% topics.forEach(function(topic) { %>
+                <option value="<%= topic.topicID %>"><%= topic.name %></option>
+            <% }); %>
+        </select>
+        <input type="submit" value="Join Topic">
+    </form>
+    <!-- Link to the homepage -->
+    <div class="return-home">
+        <a href="/">Return Home</a>
+    </div>
+</body>
+</html>

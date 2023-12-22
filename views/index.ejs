@@ -1,0 +1,33 @@
+<!-- This is the main page of the forum.  -->
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Welcome to <%= forumName %></title>
+    <!-- Linking my CSS -->
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+<body>
+    <h1>Welcome to <span class="forum-name"><%= forumName %></span></h1>
+    <p><a href="/about">About <%= forumName %></a></p>
+    
+    <!-- If the user is not logged in, show the login and register links -->
+    <% if (!loggedIn) { %>
+        <p><a href="/login">Login</a></p>
+        <p><a href="/register">Register with us</a></p>
+        <!-- If the user is logged in, show the links for the forum -->
+    <% } else { %>
+        <p><a href="/logout">Logout</a></p>
+        <p><a href="/deleteUser">Delete User</a></p>
+        <p><a href="/listUsers">List Users</a></p>
+        <p><a href="/createTopic">Create Topic</a></p>
+        <p><a href="/joinTopic">Join Topic</a></p>
+        <p><a href="/addPost">Add Post</a></p>
+        <p><a href="/listPosts">List Posts</a></p>
+        <p><a href="/listTopics">List Topics</a></p>
+        <p><a href="/searchPosts">Search Posts</a></p>
+        <p><a href="/myPosts">My Posts</a></p>
+    <% } %>
+    
+    <br />
+</body>
+</html>

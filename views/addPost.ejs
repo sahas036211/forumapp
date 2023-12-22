@@ -1,0 +1,30 @@
+<!-- This page is used to add a new post to a forum. -->
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Add a New Post</title>
+    <link rel="stylesheet"  type="text/css" href="main.css" /></head>
+<body>
+    <h1>Add a New Post to <span class="forum-name"><%= forumName %></span></h1>
+    <!-- The form for adding a new post. -->
+    <form method="POST" action="/postCreated">
+        <label for="topicID">Choose Topic:</label><br>
+        <!-- The dropdown menu for choosing a topic. -->
+        <select id="topicID" name="topicID">
+            <% topics.forEach(function(topic) { %>
+                <option value="<%= topic.topicID %>"><%= topic.name %></option>
+            <% }); %>
+        </select><br>
+        <!-- The title and content of the post. -->
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br>
+        <label for="content">Content:</label><br>
+        <textarea id="content" name="content" required></textarea><br>
+        <input type="submit" value="Create Post">
+    </form>
+    <!-- Link to the homepage. -->  
+    <div class="return-home">
+        <a href="/">Return Home</a>
+    </div>
+</body>
+</html>

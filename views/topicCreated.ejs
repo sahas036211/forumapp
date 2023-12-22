@@ -1,0 +1,18 @@
+<!-- This page is displayed when a new topic is created. -->
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Topic Created</title>
+    <!-- Linking my CSS -->
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+<body>
+    <h1>Topic Created Successfully!</h1>
+    <!-- The topic name is passed in as a variable from the controller. -->
+    <p>You have successfully created a new topic: <%= topicName %>.</p>
+    <!-- Link to the homepage -->
+    <div class="return-home">
+        <a href="/">Return Home</a>
+    </div>
+</body>
+</html>
